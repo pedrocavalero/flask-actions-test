@@ -7,3 +7,8 @@ class TestHello(unittest.TestCase):
         response = tester.get('/hello')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, b'Hello!')
+    def test_hello2(self):
+        tester = app.test_client(self)
+        response = tester.get('/hello')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data, b'Hello!')
